@@ -49,6 +49,6 @@ https://filipposigma.github.io/pang-game/
 
 ## 👨‍💻 Author
 
-**Filip Possaltsidis**
+**Filippos Saltsidis**
 
 Computer Science student at the University of London.
