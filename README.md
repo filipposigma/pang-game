@@ -1,14 +1,14 @@
-# 🎮 Pang Clone
+# Pang Clone
 
 A simplified version of the classic Pang arcade game built with JavaScript and p5.js.
 
-## 🌐 Play Online
+## Play Online
 
 https://filipposigma.github.io/pang-game/
 
 ---
 
-## 🎮 Controls
+## Controls
 
 - ⬅️ Left Arrow = Move Left
 - ➡️ Right Arrow = Move Right
@@ -16,7 +16,7 @@ https://filipposigma.github.io/pang-game/
 
 ---
 
-## ✨ Features
+## Features
 
 - Player movement
 - Bouncing balls
@@ -26,7 +26,7 @@ https://filipposigma.github.io/pang-game/
 
 ---
 
-## 🛠 Technologies
+## Technologies
 
 - JavaScript
 - p5.js
@@ -34,7 +34,7 @@ https://filipposigma.github.io/pang-game/
 
 ---
 
-## 📚 Concepts Practised
+## Concepts Practised
 
 - Variables
 - Objects
@@ -47,7 +47,7 @@ https://filipposigma.github.io/pang-game/
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Filippos Saltsidis**
 
