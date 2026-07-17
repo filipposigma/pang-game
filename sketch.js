@@ -14,6 +14,8 @@ var playerSize = 60;
 var gameTime = 90;      // seconds
 var startTime;
 
+var gameOver = false;
+
 var explosions = [];
 
 // Floor position (92% of screen height)
@@ -115,8 +117,22 @@ function draw()
 {
     background(0);
 
+    if(gameOver)
+{
+    fill(255,0,0);
+    textAlign(CENTER,CENTER);
+    textSize(60);
+    text("GAME OVER", width/2, height/2);
+
+    noLoop();
+    return;
+}
+
     let elapsed = floor((millis() - startTime) / 1000);
     let timeLeft = max(0, gameTime - elapsed);
+    
+    let ratio = playerImg.height / playerImg.width;
+
 
     imageMode(CORNER);
     image(backgroundImg, 0, 0, width, height);
@@ -168,6 +184,30 @@ function draw()
             ball.y = ball.size/2;
             ball.speedY *= -1;
         }
+
+        // Player collision
+let playerWidth = playerSize;
+let playerHeight = playerSize * ratio;
+
+let closestX = constrain(
+    ball.x,
+    playerX - playerWidth / 2,
+    playerX + playerWidth / 2
+);
+
+let closestY = constrain(
+    ball.y,
+    playerY - playerHeight,
+    playerY
+);
+
+let dx = ball.x - closestX;
+let dy = ball.y - closestY;
+
+if(dx * dx + dy * dy < (ball.size / 2) * (ball.size / 2))
+{
+    gameOver = true;
+}
 
         // Harpoon
         if(harpoon.isShot)
@@ -267,8 +307,6 @@ function draw()
 }
     // Player Character
     imageMode(CENTER);
-
-    let ratio = playerImg.height / playerImg.width;
 
     image(playerImg, playerX, playerY - playerSize / 2, playerSize, playerSize * ratio);
 
