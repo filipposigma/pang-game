@@ -241,7 +241,7 @@ if(dx * dx + dy * dy < (ball.size / 2) * (ball.size / 2))
         harpoon.tipY -= harpoon.speed;
 
         strokeWeight(4);
-        stroke(120, 70, 255);
+        stroke(220, 220, 220);
         noFill();
 
         beginShape();
