@@ -1,10 +1,21 @@
-// Pang Clone - Part 3
+// Pang Clone
+
+// ---------- Variables ---------- //
+var playerImg;
 
 var playerX, playerY, floorPosY;
 var isLeft, isRight;
 var balls;
 var harpoon;
 
+// ---------- Preload ---------- //
+function preload()
+{
+    playerImg = loadImage("creeper.png");
+}
+
+
+// ---------- Setup ---------- //
 function setup()
 {
     createCanvas(1024,576);
@@ -32,6 +43,7 @@ function setup()
     };
 }
 
+// ---------- Draw ---------- //
 function draw()
 {
     background(120,200,255);
@@ -82,11 +94,9 @@ function draw()
         }
     }
 
-    fill(255);
-    ellipse(playerX,playerY-25,35);
-
-    fill(0,0,255);
-    rect(playerX-10,playerY-25,20,25);
+    // Player Character
+    imageMode(CENTER);
+    image(playerImg, playerX, playerY - 28, 48, 48);
 
     if(isLeft && playerX>20){ playerX-=6; }
     if(isRight && playerX<width-20){ playerX+=6; }
@@ -127,6 +137,7 @@ function splitBall(index)
     balls.splice(index,1);
 }
 
+// ---------- Key Pressed ---------- //
 function keyPressed()
 {
     if(keyCode==LEFT_ARROW){isLeft=true;}
@@ -134,12 +145,13 @@ function keyPressed()
 
     if(keyCode==32 && !harpoon.isShot)
     {
-        harpoon.x = playerX-harpoon.width/2;
-        harpoon.y = playerY-25;
+        harpoon.x = playerX - harpoon.width/2;
+        harpoon.y = playerY - 30; 
         harpoon.isShot=true;
     }
 }
 
+// ---------- Key Released ---------- //
 function keyReleased()
 {
     if(keyCode==LEFT_ARROW){isLeft=false;}
